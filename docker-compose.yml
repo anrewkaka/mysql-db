@@ -13,8 +13,6 @@ services:
   adminer:
     image: phpmyadmin/phpmyadmin:latest
     restart: always
-    link
-      - mysql_db_server:db
     ports:
       - 8080:80
     volumes:
