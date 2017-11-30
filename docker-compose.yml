@@ -19,7 +19,7 @@ services:
     restart: always
     environment:
       - PMA_ARBITRARY=1
-      - PMA_HOST=${MYSQL_HOST}
+      - PMA_HOST=mysql-db
     links:
       - mysql:db
     volumes:
