@@ -6,6 +6,7 @@ services:
       - MYSQL_ROOT_PASSWORD=123456
   mysql:
    image: mysql:latest
+   container_name: ${MYSQL_HOST}
    restart: always
    env_file:
      - ".env"
@@ -18,6 +19,7 @@ services:
      - "/data:/var/lib/mysql"
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin
     restart: always
     environment:
       - PMA_ARBITRARY=1
