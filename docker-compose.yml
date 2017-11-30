@@ -15,7 +15,6 @@ services:
     restart: always
     environment:
       - PMA_ARBITRARY=1
-      - TESTSUITE_PASSWORD=123456
     ports:
       - 8080:80
     depends_on:
