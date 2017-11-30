@@ -20,6 +20,8 @@ services:
     environment:
       - PMA_ARBITRARY=1
       - PMA_HOST=${MYSQL_HOST}
+    links:
+      - mysql
     volumes:
       - /sessions
       - ./conf/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
