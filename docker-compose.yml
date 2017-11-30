@@ -11,7 +11,7 @@ services:
    volumes:
      - /data:/var/lib/mysql
   adminer:
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin/phpmyadmin:latest
     restart: always
     link
       - mysql_db_server:db
