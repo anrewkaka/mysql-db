@@ -1,5 +1,9 @@
 version: "3"
 services:
+  mariadb:
+    image: mariadb:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
   mysql:
    image: mysql:latest
    restart: always
