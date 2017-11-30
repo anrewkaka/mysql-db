@@ -21,8 +21,10 @@ services:
       - PMA_ARBITRARY=1
       - PMA_HOST=${MYSQL_HOST}
     volumes:
+      - /sessions
       - ./conf/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
     ports:
       - 8080:80
     depends_on:
+      - mariadb
       - mysql
