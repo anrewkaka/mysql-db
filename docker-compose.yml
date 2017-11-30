@@ -17,6 +17,8 @@ services:
      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
    volumes:
      - "/data:/var/lib/mysql"
+   ports:
+     - "8989:3306"
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     container_name: phpmyadmin
