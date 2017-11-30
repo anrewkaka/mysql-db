@@ -3,6 +3,10 @@
 if [ ! -d "/data" ]; then
   mkdir -p /data
 fi
+if [ ! -d "/phpmyadmin" ]; then
+  mkdir -p /phpmyadmin
+fi
+
 # mkfs.ext4 -E lazy_itable_init=0,lazy_journal_init=0,discard /dev/sdb
 mount -o defaults /dev/sdb /data
 
