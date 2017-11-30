@@ -10,10 +10,13 @@ services:
      - MYSQL_PASSWORD:123456
    volumes:
      - /data:/var/lib/mysql
-  adminer:
+  phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     restart: always
+    environment:
+      - PMA_ARBITRARY=1
+      - TESTSUITE_PASSWORD=123456
     ports:
       - 8080:80
-    volumes:
-     - ./conf/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
+    depends_on:
+      - mysql
