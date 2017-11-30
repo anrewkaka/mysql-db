@@ -16,5 +16,5 @@ git clean -f
 git checkout master
 git pull
 
-export COMPOSE_FILE=/opt/subversion/docker-compose.yml
+export COMPOSE_FILE=./docker-compose.yml
 docker-compose up -d
