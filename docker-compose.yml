@@ -21,7 +21,7 @@ services:
       - PMA_ARBITRARY=1
       - PMA_HOST=${MYSQL_HOST}
     links:
-      - mysql
+      - mysql:db
     volumes:
       - /sessions
       - ./conf/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
@@ -30,3 +30,7 @@ services:
     depends_on:
       - mariadb
       - mysql
+
+volumes:
+    db:
+        driver: "local"
