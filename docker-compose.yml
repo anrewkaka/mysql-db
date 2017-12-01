@@ -1,9 +1,9 @@
 version: "3"
 services:
-  mariadb:
-    image: mariadb:latest
-    environment:
-      - MYSQL_ROOT_PASSWORD=123456
+  # mariadb:
+  #   image: mariadb:latest
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=123456
   mysql:
    image: mysql:latest
    container_name: ${MYSQL_HOST}
@@ -17,8 +17,6 @@ services:
      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
    volumes:
      - "/data:/var/lib/mysql"
-   ports:
-     - "8989:3306"
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     container_name: phpmyadmin
