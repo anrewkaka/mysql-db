@@ -7,14 +7,14 @@ services:
     env_file:
       - ".env"
     environment:
-      - MYSQL_ROOT_HOST=%
+      - MYSQL_ROOT_HOST=${MYSQL_HOST}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     volumes:
       - /data:/var/lib/mysql:rw
-      #- ./conf/mysqld.conf:/etc/mysql/mysql.conf.d/mysqld.conf
+      - ./conf/mysqld.conf:/etc/mysql/mysql.conf.d/mysqld.conf
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     container_name: phpmyadmin
