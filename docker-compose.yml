@@ -12,8 +12,8 @@ services:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-   volumes:
-     - "/data:/var/lib/mysql"
+    volumes:
+      - /data:/var/lib/mysql
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     container_name: phpmyadmin
@@ -23,9 +23,9 @@ services:
       - PMA_HOST=${MYSQL_HOST}
     volumes:
       - /sessions
-      - "./conf/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php"
+      - ./conf/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
     ports:
-      - "8080:80"
+      - 8080:80
     depends_on:
       - mysql
 
