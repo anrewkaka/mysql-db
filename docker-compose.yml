@@ -30,4 +30,4 @@ services:
       - mysql
 
 volumes:
-  - db_data:/data
+  - db_data:{/data}
