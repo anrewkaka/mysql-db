@@ -13,7 +13,7 @@ services:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     volumes:
-      - db_data:/var/lib/mysql
+      - /data:/var/lib/mysql
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     container_name: phpmyadmin
@@ -28,6 +28,3 @@ services:
       - 8080:80
     depends_on:
       - mysql
-
-volumes:
-  - db_data:{/data}
