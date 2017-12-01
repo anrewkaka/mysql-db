@@ -26,7 +26,9 @@ $i++;
 $cfg['Servers'][$i]['auth_type'] = 'cookie';
 /* Server parameters */
 $cfg['Servers'][$i]['host'] = 'localhost';
+$cfg['Servers'][$i]['connect_type'] = 'tcp';
 $cfg['Servers'][$i]['compress'] = false;
+$cfg['Servers'][$i]['extension'] = 'mysql';
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
 /**
  * phpMyAdmin configuration storage settings.
