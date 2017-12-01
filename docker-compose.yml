@@ -25,7 +25,7 @@ services:
       - /sessions
       - ./conf/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
     links:
-      - ${MYSQL_HOST}:db
+      - localhost:db
     ports:
       - 8080:80
     depends_on:
