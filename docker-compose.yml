@@ -5,16 +5,17 @@ services:
   #   environment:
   #     - MYSQL_ROOT_PASSWORD=123456
   mysql:
-   image: mysql:latest
-   container_name: ${MYSQL_HOST}
-   restart: always
-   env_file:
-     - ".env"
-   environment:
-     - MYSQL_DATABASE=${MYSQL_DATABASE}
-     - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-     - MYSQL_USER=${MYSQL_USER}
-     - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    image: mysql:latest
+    container_name: ${MYSQL_HOST}
+    restart: always
+    env_file:
+      - ".env"
+    environment:
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
    volumes:
      - "/data:/var/lib/mysql"
   phpmyadmin:
