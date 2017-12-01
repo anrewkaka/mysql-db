@@ -13,8 +13,8 @@ services:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     volumes:
-      - /data:/var/lib/mysql
-      - ./conf/mysqld.conf:/etc/mysql/mysql.conf.d/mysqld.conf
+      - /data:/var/lib/mysql:rw
+      #- ./conf/mysqld.conf:/etc/mysql/mysql.conf.d/mysqld.conf
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     container_name: phpmyadmin
