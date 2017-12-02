@@ -12,6 +12,8 @@ services:
     volumes:
       - /data:/var/lib/mysql:rw
       - ./conf/mysqld.conf:/etc/mysql/mysql.conf.d/mysqld.conf
+    expose:
+      - 3306
     ports:
       - 3306:3306
   phpmyadmin:
