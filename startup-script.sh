@@ -9,8 +9,8 @@ mount /dev/sdb /data
 
 # docker restart
 # sed -i 's/dockerd -H fd\:\/\/$/dockerd -H fd\:\/\/ --bip=10.0.42.1\/24 --fixed-cidr=10.0.42.0\/24/' /lib/systemd/system/docker.service
-systemctl daemon-reload
-systemctl restart docker
+# systemctl daemon-reload
+# systemctl restart docker
 
 git reset --hard
 git clean -f
@@ -18,4 +18,5 @@ git checkout master
 git pull
 
 export COMPOSE_FILE=./docker-compose.yml
+docker-compose down
 docker-compose up -d
